@@ -15,7 +15,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,    KC_LEFT,    KC_PERC,    KC_ASTR,    KC_DQT,     KC_UP,                              KC_DOWN,    KC_AMPR,    KC_QUOT,    KC_QUES,    KC_RGHT,    _______,
         _______,    KC_CIRC,    KC_EQL,     KC_UNDS,    KC_DLR,     KC_HASH,                            KC_TILD,    KC_COLN,    KC_LPRN,    KC_RPRN,    KC_SCLN,    _______,
         _______,    KC_LT,      KC_PLUS,    KC_MINS,    KC_GT,      KC_AT,      _______,    _______,    KC_EXLM,    KC_PIPE,    KC_LCBR,    KC_RCBR,    _______,    _______,
-                                _______,    _______,    _______,    _______,    _______,    _______, LT(1,KC_ENTR), KC_ESC,     _______,    _______
+                                _______,    _______,    _______,    KC_TAB,     _______,    _______, LT(1,KC_ENTR), KC_ESC,     _______,    _______
     ),
 
 	[2] = LAYOUT(
@@ -35,12 +35,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     )
 };
 
-#if defined(ENCODER_ENABLE) && defined(ENCODER_MAP_ENABLE)
-const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
+#ifdef ENCODER_ENABLE
 
-};
-#endif // defined(ENCODER_ENABLE) && defined(ENCODER_MAP_ENABLE)
+bool encoder_update_user(uint8_t index, bool clockwise) {
+    if (index == 0) {
+        if (clockwise) {
+            tap_code(KC_VOLU);
+        } else {
+            tap_code(KC_VOLD);
+        }
+    } else if (index == 1) {
+        if (clockwise) {
+            tap_code(KC_PGDN);
+        } else {
+            tap_code(KC_PGUP);
+        }
+    }
+    return true;
+}
 
-
+#endif
 
 
