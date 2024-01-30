@@ -1,10 +1,10 @@
-# Aurora Sofle v2's Default Keymap
-_This keymap is a copy of the [Sofle default keymap](https://github.com/qmk/qmk_firmware/tree/master/keyboards/sofle/keymaps/default), with some modifications._
+# Aurora Sofle v2's Eugeny Dementev Keymap
+_This keymap is a copy of the [Sofle default keymap](https://github.com/qmk/qmk_firmware/tree/master/keyboards/sofle/keymaps/default), with multiple modifications._
 
-A simple default keymap for the Aurora Sofle v2
+A custom default keymap for the Aurora Sofle v2
 ===============================================
 
-Keymaps in general are quite personal, so it is difficult to come up with a default that will suit every user. We hope this keymap serves as a good starting point for your own - although it should be fairly usable out-of-the-box.
+Curren keymap is an attemp to introduce ideas from [Designing a Symbol Layer](https://getreuer.info/posts/keyboards/symbol-layer/index.html) an apply them to sofle layout while also utilizing Mod-Tap for home row with exclusion of Shift key
 
 What do all these layers do?
 ----------------------------
